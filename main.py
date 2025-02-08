@@ -3,23 +3,27 @@ Main module to execute this project
 """
 
 import os
+from datetime import datetime
 
+from dotenv import load_dotenv
 from loguru import logger
+
 from src.ai.models.model import AIModelProtocol
-from src.model.newspaper_config import NewspaperConfig
-from src.model.news import Article, News
-from src.ai.news import NewsAI
 from src.ai.models.openai import OpenAIModel
+from src.ai.news import NewsAI
+from src.model.news import Article, News
+from src.model.newspaper_config import NewspaperConfig
 from src.playwright.custom.nord_bayern import (
     accept_nord_bayern_cookies,
     extract_nord_bayern_headlines,
 )
 from src.playwright.newspaper import NewspaperContentGatherer
-from dotenv import load_dotenv
+from src.telegram.bot import TelegramBot
 
 HEADED = True
 BATCH_SIZE = 10
-MOCK_AI_RESPONSE = True
+MOCK_AI_RESPONSE = False
+MOCK_EXTRACT_NEWS = False
 NEWSPAPERS = [
     NewspaperConfig(
         name="Nord Bayern",
@@ -92,12 +96,45 @@ def display_news(news: list[Article]) -> None:
         )
 
 
+def broadcast_news(bot: TelegramBot, newspaper_name: str, news: list[Article]) -> None:
+    """
+    Displayed the articles that were provided
+    """
+    logger.info(f"Sending broadcast message with the news of {newspaper_name}...")
+
+    categories = set([x.category for x in news])
+
+    logger.debug(f"The following categories were found: {categories}")
+
+    bot.broadcast_message(
+        f"""**News from {newspaper_name} ({datetime.now().strftime(r"%Y-%m-%d")}):**"""
+    )
+    for category in sorted(categories):
+        category_message = f"""### {category}\n\n"""
+        for index, article in enumerate(
+            sorted(
+                filter(lambda x: x.category == category, news), key=lambda x: x.title
+            ),
+            start=1,
+        ):
+            category_message += (
+                f"{index}. *{article.title}*\n"
+                f"- *Description:* {article.description}\n"
+                f"- *English Translation:* {article.english_translation}\n\n"
+            )
+
+        bot.broadcast_message(category_message)
+
+
 def main():
     """
     Execute main functionality of this project
     """
     model = OpenAIModel(api_key=os.environ.get("OPENAI_API_KEY", ""))
-    newspaper_gatherer = NewspaperContentGatherer(headed=HEADED)
+    newspaper_gatherer = NewspaperContentGatherer(
+        headed=HEADED, mock_extract_news=MOCK_EXTRACT_NEWS
+    )
+    bot = TelegramBot()
 
     for newspaper in NEWSPAPERS:
 
@@ -113,7 +150,8 @@ def main():
             continue
 
         save_data(news)
-        display_news(news)
+        # display_news(news)
+        broadcast_news(bot, newspaper.name, news)
 
     newspaper_gatherer.close()
     print("Finished")

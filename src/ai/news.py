@@ -46,7 +46,7 @@ class NewsAI:
         - Make a summary translation to english.
         - Assign the news to a category, like for example 'sport', 'german politics', 'international politics', 'tabloid'...
         - Ensure that multiple news items are extracted if available.
-        - Make sure you do not miss any translation
+        - Make sure you do not miss any translation and that the category is in english.
         - Format the output as a JSON list of News objects.
         """
         if self.mock_response is True:
