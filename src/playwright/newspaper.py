@@ -1,4 +1,4 @@
-from typing import Callable
+from typing import Any, Callable
 from playwright.sync_api import sync_playwright, Playwright, Browser, Page
 
 
@@ -31,7 +31,7 @@ class NewspaperContentGatherer:
         """
         self.page.screenshot(path="test.png", type="png")
 
-    def extract_text_content(self) -> str:
+    def extract_root_text_content(self) -> str:
         """
         Return the whole text of the page
         """
@@ -42,6 +42,12 @@ class NewspaperContentGatherer:
         Execute the provided function providing the page as argument
         """
         function(self.page)
+
+    def execute_custom_function_returning_value(self, function: Callable) -> Any:
+        """
+        Execute the provided function providing the page as argument
+        """
+        return function(self.page)
 
     def close(self) -> None:
         """

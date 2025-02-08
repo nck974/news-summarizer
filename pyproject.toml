@@ -8,7 +8,17 @@ name = "news-summarizer"
 
 requires-python = ">= 3.12"
 
-dependencies = ["playwright==1.50.0 "]
+dependencies = [
+    "playwright==1.50.0",
+    "python-dotenv==1.0.1",
+    "openai==1.61.1",
+    "loguru==0.7.3",
+]
 
 [tool.poetry]
-package-mode=false
+package-mode = false
+
+
+[tool.poetry.dependencies]
+# This is needed due to loguru's pyproject.toml
+python = ">=3.12,<4.0"
