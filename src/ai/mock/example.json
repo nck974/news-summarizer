@@ -2,368 +2,296 @@
     "news": [
         {
             "title": "Trotz heftiger Debatte: Wahlforscher erklärt, warum sich so wenig in Umfragen tut",
-            "description": "Wahlforscher analysieren die geringe Veränderung in Umfrageergebnissen trotz intensiver politischer Diskussionen.",
-            "category": "german politics",
-            "english_translation": "Despite heated debate: Pollster explains why there is so little change in polls"
+            "description": "Wahlforscher analysieren die konstanten Umfragewerte trotz intensiver politischer Diskussionen in den letzten Wochen und geben Aufschluss über die Stabilität der Wählermeinungen.",
+            "category": "German politics",
+            "english_translation": "Despite intense debate: Pollsters explain why polls show little change"
         },
         {
             "title": "Trump deutet Treffen mit Selenskyj - und hat Rohstoffe aus der Ukraine im Visier",
-            "description": "Donald Trump kündigt ein mögliches Treffen mit dem ukrainischen Präsidenten Selenskyj an und zeigt Interesse an ukrainischen Rohstoffen.",
-            "category": "international politics",
-            "english_translation": "Trump hints at a meeting with Zelenskyy - and is eyeing resources from Ukraine"
+            "description": "Ex-Präsident Trump signalisiert Interesse an einem bevorstehenden Treffen mit dem ukrainischen Präsidenten Selenskyj, wobei der Fokus auf möglichen Ressourcen aus der Ukraine liegt.",
+            "category": "International politics",
+            "english_translation": "Trump hints at meeting with Zelensky - eyeing resources from Ukraine"
         },
         {
             "title": "Noch 79 Geiseln im Gazastreifen: Hamas will an der Vereinbarung festhalten",
-            "description": "Die Hamas bekräftigt, dass sie an der Vereinbarung zur Freilassung von Geiseln im Gazastreifen festhalten wird.",
-            "category": "international politics",
-            "english_translation": "Still 79 hostages in Gaza: Hamas wants to adhere to the agreement"
+            "description": "Die Hamas bestätigt, dass noch 79 Geiseln im Gazastreifen verbleiben und bekräftigt ihr Engagement für die bestehende Vereinbarung zur Freilassung der Geiseln.",
+            "category": "International politics",
+            "english_translation": "79 hostages remaining in Gaza: Hamas intends to adhere to the agreement"
         },
         {
             "title": "Chaos auf der A9: Transporter bleibt mit leerem Tank liegen - Heck ragt auf Fahrspur",
-            "description": "Ein Transporter bleibt auf der A9 liegen, nachdem ihm der Treibstoff ausgegangen ist, was zu Verkehrsbehinderungen führt.",
-            "category": "local news",
-            "english_translation": "Chaos on the A9: Van breaks down with an empty tank - rear extends onto the lane"
+            "description": "Ein Transporter bleibt auf der Autobahn A9 aufgrund eines leerem Tanks stehen, was zu Verkehrsbehinderungen führt, da das Fahrzeug teilweise auf der Fahrspur steht.",
+            "category": "Transport",
+            "english_translation": "Chaos on the A9: Van stalls with empty tank - rear extends onto the lane"
         },
         {
             "title": "Demos gegen den Rechtsruck: Kundgebung gegen CSU-Parteitag an der Frankenhalle",
-            "description": "Bei einer Demonstration in der Nähe der Frankenhalle wird gegen den Rechtsruck innerhalb der CSU protestiert.",
-            "category": "german politics",
-            "english_translation": "Demonstrations against the rightward shift: Rally against CSU party convention at the Frankenhalle"
-        },
-        {
-            "title": "Traumstart in Magdeburg: Karafiat bringt den Club früh in Führung",
-            "description": "Die Mannschaft aus Magdeburg erzielt einen frühen Führungstreffer durch Karafiat und startet damit erfolgreich ins Spiel.",
-            "category": "sport",
-            "english_translation": "Dream start in Magdeburg: Karafiat puts the club ahead early"
-        },
-        {
-            "title": "Massenweise Models: Warum sich am ZOB Nürnberg am Samstag eine Schlange bildet(e)",
-            "description": "Am ZOB in Nürnberg versammeln sich zahlreiche Models, was zu großen Menschenansammlungen führt.",
-            "category": "entertainment",
-            "english_translation": "Masses of models: Why a line forms at the central bus station in Nuremberg on Saturday"
+            "description": "Demonstranten versammeln sich zur Kundgebung gegen den Rechtsruck der CSU, die parallel zu deren Parteitag an der Frankenhalle stattfindet.",
+            "category": "German politics",
+            "english_translation": "Protests against the rightward shift: Rally against CSU party convention at Frankenhalle"
         },
         {
             "title": "Döner trifft Krapfen: Bäckerei gelingt Kassenschlager der Faschingssession",
-            "description": "Eine Bäckerei experimentiert mit einer neuen Kreation, die Döner und Krapfen kombiniert, und erzielt damit großen Erfolg.",
-            "category": "food",
-            "english_translation": "Döner meets Krapfen: Bakery achieves bestseller of the carnival season"
-        },
-        {
-            "title": "Charles diniert mit Beckhams, Mirren und Versace",
-            "description": "Prinz Charles veranstaltet ein Abendessen mit prominenten Gästen, darunter die Beckhams, Helen Mirren und Versace.",
-            "category": "celebrities",
-            "english_translation": "Charles dines with the Beckhams, Mirren and Versace"
+            "description": "Eine Bäckerei bringt ein innovatives Produkt auf den Markt, das Döner und Krapfen kombiniert und in der Faschingszeit zum Trend wird.",
+            "category": "Business",
+            "english_translation": "Döner meets Krapfen: Bakery achieves hit product of the carnival season"
         },
         {
             "title": "Söder legt Kirchen mehr politische Zurückhaltung nahe",
-            "description": "Bayerns Ministerpräsident Söder fordert religiöse Institutionen auf, sich politisch zurückhaltender zu verhalten.",
-            "category": "german politics",
+            "description": "Bayerns Ministerpräsident Söder fordert die Kirchen auf, sich politisch zurückhaltender zu zeigen und ihre Einflussnahme zu reflektieren.",
+            "category": "German politics",
             "english_translation": "Söder advises churches to exercise more political restraint"
         },
         {
-            "title": "Aicher verpasst Überraschung bei WM-Abfahrt knapp",
-            "description": "Der Skifahrer Aicher konnte in der Abfahrt bei der Weltmeisterschaft nur knapp eine Überraschung erzielen.",
-            "category": "sport",
-            "english_translation": "Aicher narrowly misses surprise at World Championship downhill"
-        },
-        {
             "title": "Hof macht den Anfang: Die Region geht gegen den Rechtsruck auf die Straße",
-            "description": "In Hof finden Aktionen statt, die sich gegen den rechten politischen Trend in der Region richten.",
+            "description": "In Hof haben Proteste gegen den Rechtsruck in der Gesellschaft begonnen, die Initiative könnte sich auf weitere Städte ausweiten.",
             "category": "german politics",
-            "english_translation": "Hof leads the way: The region protests against the right-wing shift"
+            "english_translation": "Hof starts the initiative: The region protests against the right-wing shift"
         },
         {
             "title": "Trump will auch im Kennedy-Kulturzentrum das Sagen haben",
-            "description": "Donald Trump äußert den Wunsch, Einfluss im Kennedy-Kulturzentrum zu gewinnen.",
+            "description": "Donald Trump äußert den Wunsch, auch im Kennedy-Kulturzentrum Einfluss zu nehmen und seine politischen Ideen voranzutreiben.",
             "category": "international politics",
-            "english_translation": "Trump also wants to have a say at the Kennedy Center"
+            "english_translation": "Trump wants to have a say in the Kennedy Center as well"
         },
         {
-            "title": "Merz: SPD und Grüne „schon ganz vernünftig“",
-            "description": "Merz lobt die SPD und die Grünen für ihre vernünftige Haltung in der aktuellen politischen Lage.",
+            "title": "Merz sagt Nein zur AfD - „Wir würden unser Land verraten“",
+            "description": "Friedrich Merz, Vorsitzender der CDU, lehnt eine Zusammenarbeit mit der AfD entschieden ab und warnt vor den Folgen.",
             "category": "german politics",
-            "english_translation": "Merz: SPD and Greens are 'quite reasonable' already"
+            "english_translation": "Merz says no to the AfD - 'We would betray our country'"
         },
         {
             "title": "Gegen den Rechtsruck: Diese Demos in der Region stehen bevor",
-            "description": "Es sind weitere Demonstrationen gegen den Rechtsruck in der Region geplant.",
+            "description": "Angesichts des zunehmenden Rechtsrucks sind in der Region zahlreiche Protestdemos geplant.",
             "category": "german politics",
-            "english_translation": "Against the right-wing shift: Upcoming demonstrations in the region"
-        },
-        {
-            "title": "Eklat nach Live-Sex auf Liebesinsel geht viral: Freund rastet aus, als er seine Partnerin sieht",
-            "description": "Ein Vorfall auf einer Liebesinsel, bei dem ein live Sex-Event stattfand, sorgt für virale Aufmerksamkeit.",
-            "category": "tabloid",
-            "english_translation": "Incident after live sex on Love Island goes viral: boyfriend erupts upon seeing his partner"
+            "english_translation": "Against the right-wing shift: These demonstrations are upcoming in the region"
         },
         {
             "title": "Auch in Nürnberg: Sicherheit bei Faschingsumzügen wird weiter hochgefahren",
-            "description": "In Nürnberg werden die Sicherheitsmaßnahmen für die bevorstehenden Faschingsumzüge verstärkt.",
+            "description": "Die Sicherheitsvorkehrungen bei den Faschingsumzügen in Nürnberg werden aufgrund neuer Bedrohungen erhöht.",
             "category": "local news",
-            "english_translation": "In Nuremberg too: Security for carnival parades will be enhanced"
+            "english_translation": "Also in Nuremberg: Security at carnival parades is being tightened"
         },
         {
             "title": "Wegen Brückenarbeiten: Südwesttangente wird am Kreuz Nürnberg Hafen am Wochenende vollgesperrt",
-            "description": "Aufgrund von Brückenarbeiten wird die Südwesttangente am Kreuz Nürnberg Hafen am Wochenende komplett gesperrt.",
+            "description": "Aufgrund von Brückenarbeiten wird die Südwesttangente am Kreuz Nürnberg Hafen an diesem Wochenende vollständig gesperrt.",
             "category": "local news",
-            "english_translation": "Due to bridge works: Southwest bypass will be completely closed at Nuremberg Port junction on the weekend"
-        },
-        {
-            "title": "Die Monatshoroskope im Februar 2025: So stehen die Sterne für Sie",
-            "description": "Die Monatshoroskope für Februar 2025 bieten einen Blick auf die astrologischen Prognosen für die Leser.",
-            "category": "lifestyle",
-            "english_translation": "Monthly horoscopes for February 2025: Here's how the stars align for you"
+            "english_translation": "Due to bridge works: Southwest tangential road will be fully closed at the Nuremberg Harbor junction this weekend"
         },
         {
             "title": "Dieses Sternzeichen sollte im Februar authentisch sein, sonst droht eine echte Liebeskrise!",
-            "description": "Das Sternzeichen wird aufgefordert, im Februar ehrlich zu seinen Gefühlen zu sein, um eine mögliche Beziehungskrise zu vermeiden.",
-            "category": "lifestyle",
-            "english_translation": "This zodiac sign should be authentic in February, or else a real love crisis is imminent!"
+            "description": "Ein bestimmtes Sternzeichen wird geraten, im Februar authentisch zu sein, da andernfalls eine ernsthafte Beziehungskrise drohen könnte.",
+            "category": "astrology",
+            "english_translation": "This zodiac sign should be authentic in February, or a real love crisis threatens!"
         },
         {
             "title": "Dieses Sternzeichen sollte seine Liebe zeigen, sonst droht im Februar eine bittere Enttäuschung!",
-            "description": "Ein anderes Sternzeichen wird darauf hingewiesen, dass es aktiv seine Zuneigung zeigen sollte, um Enttäuschungen in der Liebe zu vermeiden.",
-            "category": "lifestyle",
-            "english_translation": "This zodiac sign should show its love, or else a bitter disappointment looms in February!"
+            "description": "Ein weiteres Sternzeichen muss im Februar seine Liebe zeigen, um eine bittere Enttäuschung zu vermeiden.",
+            "category": "astrology",
+            "english_translation": "This zodiac sign should express its love, or a bitter disappointment awaits in February!"
         },
         {
             "title": "An alle Einkaufs-Liebenden: Morgen öffnen die Geschäfte in diesen Städten",
-            "description": "Die Geschäfte in mehreren Städten werden morgen für Einkäufer öffnen, was eine Erleichterung für Shopping-Fans darstellt.",
+            "description": "Morgen können Einkaufsfreunde in mehreren Städten wieder die Geschäfte besuchen, die wieder öffnen.",
             "category": "local news",
-            "english_translation": "To all shopping lovers: Tomorrow the stores will open in these cities."
+            "english_translation": "Attention shopping lovers: Stores in these cities will open tomorrow"
         },
         {
-            "title": "Milchhäusle hat \"Erwartungen übertroffen\": So reagiert nun die Stadt Fürth darauf",
-            "description": "Das Milchhäusle hat die Erwartungen übertroffen, was zu positiven Reaktionen seitens der Stadt Fürth geführt hat.",
-            "category": "local news",
-            "english_translation": "Milchhäusle has \"exceeded expectations\": Here is how the city of Fürth is reacting."
+            "title": "Milchhäusle hat 'Erwartungen übertroffen': So reagiert nun die Stadt Fürth darauf",
+            "description": "Das Milchhäusle hat die Erwartungen übertroffen, was positive Reaktionen aus der Stadt Fürth hervorruft.",
+            "category": "local economy",
+            "english_translation": "Milchhäusle has 'exceeded expectations': Here's how the city of Fürth is reacting"
         },
         {
-            "title": "Heilsbronn: Täter ist nach Messerangriff in Wohngebiet weiterhin flüchtig",
-            "description": "Nach einem Messerangriff in einem Wohngebiet in Heilsbronn ist der Täter nach wie vor flüchtig.",
-            "category": "crime",
-            "english_translation": "Heilsbronn: Perpetrator still at large following knife attack in residential area."
-        },
-        {
-            "title": "Kurz nur 19 Euro: Wird Kompressor Bosch Easy Pump 3Ah von dieser Akku-Luftpumpe 6Ah weggeblasen?",
-            "description": "Ein Preisvergleich zwischen den Kompressoren Bosch Easy Pump 3Ah und einem neuen Modell zur Überprüfung von Schnäppchen.",
-            "category": "consumer",
-            "english_translation": "Shortly for only 19 euros: Will the Bosch Easy Pump 3Ah compressor be blown away by this 6Ah battery pump?"
-        },
-        {
-            "title": "Preiskampf Amazon vs. eBay: Top-Akkubohrschrauber DeWalt XR samt 2x 18V-Akku günstig wie nie in 2025",
-            "description": "Ein Preisvergleich zwischen Amazon und eBay für den DeWalt XR Akku-Bohrschrauber, der derzeit günstig angeboten wird.",
-            "category": "consumer",
-            "english_translation": "Price battle Amazon vs. eBay: Top cordless drill DeWalt XR with 2x 18V batteries cheaper than ever in 2025."
-        },
-        {
-            "title": "Günstig wie seit Monaten nicht: Smartes Thermostat Fritz Dect 302 für Fritz Box senkt die Heizkosten",
-            "description": "Das smarte Thermostat Fritz Dect 302 wird als kostengünstige Lösung zur Senkung der Heizkosten beworben.",
-            "category": "consumer",
-            "english_translation": "As cheap as it hasn't been for months: Smart thermostat Fritz Dect 302 for Fritz Box reduces heating costs."
+            "title": "Beschwerde nicht erfolgreich: Bahnstrecke Nürnberg-Regensburg wird 2026 zeitweise gesperrt",
+            "description": "Die Bahnstrecke Nürnberg-Regensburg wird 2026 vorübergehend gesperrt, trotz eingereichter Beschwerden.",
+            "category": "transportation",
+            "english_translation": "Complaint unsuccessful: The Nürnberg-Regensburg railway line will be temporarily closed in 2026"
         },
         {
             "title": "Leckerer Frischkäse-Aufstrich mit Basilikum und Tomaten - da braucht es keinen Belag mehr",
-            "description": "Ein Rezept für einen Frischkäse-Aufstrich mit Basilikum und Tomaten, das alleine eine leckere Option darstellt.",
+            "description": "Ein Rezept für einen köstlichen Frischkäseaufstrich mit Basilikum und Tomaten ist vorgestellt worden.",
             "category": "food",
-            "english_translation": "Delicious cream cheese spread with basil and tomatoes - no topping needed."
+            "english_translation": "Delicious fresh cheese spread with basil and tomatoes - no topping needed"
         },
         {
             "title": "Saftiger Hefe-Nuss-Striezel mit Marzipan: Macht auch für‘s Auge was her",
-            "description": "Ein Rezept für einen Hefe-Nuss-Striezel mit Marzipan, der sowohl geschmacklich als auch optisch ansprechend ist.",
+            "description": "Ein Rezept für einen saftigen Hefe-Nuss-Striezel mit Marzipan, der auch optisch ansprechend ist, wurde veröffentlicht.",
             "category": "food",
-            "english_translation": "Juicy yeast nut strudel with marzipan: also looks good."
+            "english_translation": "Juicy yeast nut twist with marzipan: Also visually appealing"
         },
         {
             "title": "Südtiroler Spezialität: Diese Spinatknödel müssen Sie nachkochen",
-            "description": "Ein Rezept für köstliche Spinatknödel aus Südtirol wird vorgestellt.",
+            "description": "Ein beliebtes Rezept für Spinatknödel aus Südtirol wird empfohlen.",
             "category": "food",
-            "english_translation": "South Tyrolean specialty: You must cook these spinach dumplings"
+            "english_translation": "South Tyrolean specialty: You must try these spinach dumplings"
         },
         {
             "title": "Ex-Grünen-Chefin Ricarda Lang über ihren Gewichtsverlust: 'Abnehmen war geplant'",
-            "description": "Ricarda Lang, ehemalige Chefin der Grünen, spricht über ihren geplanten Gewichtsverlust.",
-            "category": "politics",
-            "english_translation": "Former Green leader Ricarda Lang on her weight loss: 'Losing weight was planned'"
+            "description": "Die ehemalige Grünen-Vorsitzende Ricarda Lang spricht über ihren geplanten Gewichtsverlust.",
+            "category": "health",
+            "english_translation": "Ex-Greens leader Ricarda Lang on her weight loss: 'Losing weight was planned'"
+        },
+        {
+            "title": "Heilsbronn: Täter ist nach Messerangriff in Wohngebiet weiterhin flüchtig",
+            "description": "Nach einem Messerangriff in Heilsbronn wird der Täter weiterhin gesucht.",
+            "category": "crime",
+            "english_translation": "Heilsbronn: Suspect still at large after knife attack in residential area"
+        },
+        {
+            "title": "Von Super Bowl bis zur Night of Freestyle: Diese Events sollten Sie am Wochenende nicht verpassen",
+            "description": "Am kommenden Wochenende finden zahlreiche Events statt, die von Sport über Musik bis hin zu kulturellen Veranstaltungen reichen und die man nicht verpassen sollte.",
+            "category": "entertainment",
+            "english_translation": "From the Super Bowl to the Night of Freestyle: These events you shouldn't miss this weekend"
         },
         {
             "title": "Autofahrer in Franken aufgepasst: Vollsperrungen der A9 am Wochenende",
-            "description": "Die A9 wird am Wochenende für Autofahrer in Franken vollständig gesperrt.",
+            "description": "Auf der A9 in Franken wird es am Wochenende aufgrund von Bauarbeiten zu Vollsperrungen kommen.",
             "category": "transportation",
             "english_translation": "Drivers in Franconia beware: Full closures of the A9 this weekend"
         },
         {
-            "title": "Von Super Bowl bis zur Night of Freestyle: Diese Events sollten Sie am Wochenende nicht verpassen",
-            "description": "Ein Überblick über wichtige Events am Wochenende, darunter der Super Bowl und die Night of Freestyle.",
-            "category": "entertainment",
-            "english_translation": "From the Super Bowl to the Night of Freestyle: Events you shouldn't miss this weekend"
-        },
-        {
             "title": "Glasstücke im Produkt: Supermarkt-Mais zurückgerufen",
-            "description": "Ein Rückruf wurde für Supermarktmais aufgrund von Glasstücken im Produkt initiiert.",
+            "description": "Ein Supermarkt sieht sich gezwungen, Maisprodukte zurückzurufen, nachdem Glasstücke in einige Chargen gefunden wurden.",
             "category": "consumer safety",
             "english_translation": "Glass pieces in product: Supermarket corn recalled"
         },
         {
-            "title": "Politisch aufgeladener Samstag: Merz und Söder in Nürnberg - zahlreiche Proteste angemeldet",
-            "description": "Ein Samstag in Nürnberg wird von politischen Ereignissen und zahlreichen Protesten geprägt sein.",
-            "category": "german politics",
-            "english_translation": "Politically charged Saturday: Merz and Söder in Nuremberg - numerous protests registered"
-        },
-        {
             "title": "Amazon Prime Video in Deutschland steht auf der Kippe",
-            "description": "Die Zukunft von Amazon Prime Video in Deutschland steht in Frage.",
+            "description": "Amazon Prime Video steht in Deutschland vor Herausforderungen, die möglicherweise die Zukunft des Dienstes beeinträchtigen könnten.",
             "category": "business",
             "english_translation": "Amazon Prime Video in Germany is at risk"
         },
         {
             "title": "Hier wird Nürnberg grundlegend neu gestaltet - Erste Maßnahmen bereits in wenigen Monaten",
-            "description": "Zukunftsorientierte Pläne zur Neugestaltung Nürnbergs sollen in wenigen Monaten umgesetzt werden.",
-            "category": "urban development",
-            "english_translation": "Nuremberg to undergo fundamental redesign - First measures to be implemented in a few months"
-        },
-        {
-            "title": "Die Menge ist ein Schock: Mann findet über 100 Giftschlangen in seinem Garten",
-            "description": "Ein Mann hat über 100 Giftschlangen in seinem Garten entdeckt.",
-            "category": "wildlife",
-            "english_translation": "The amount is shocking: man finds over 100 venomous snakes in his garden"
+            "description": "In Nürnberg werden grundlegende Veränderungen in der Stadtplanung umgesetzt, mit ersten Maßnahmen, die in den kommenden Monaten beginnen.",
+            "category": "local news",
+            "english_translation": "Nuremberg is being fundamentally redesigned - Initial measures starting in a few months"
         },
         {
             "title": "Zusätzliche Unterstützung für Familien: So gibt es Hunderte Euro extra",
-            "description": "Es wird zusätzliche finanzielle Unterstützung für Familien in Höhe von mehreren Hundert Euro gegeben.",
-            "category": "social policy",
-            "english_translation": "Additional support for families: receive hundreds of euros extra"
+            "description": "Familien dürfen sich auf zusätzliche finanzielle Unterstützung freuen, die in naher Zukunft bereitgestellt wird.",
+            "category": "economy",
+            "english_translation": "Additional support for families: How there are hundreds of euros extra"
         },
         {
-            "title": "Fränkisches Unternehmen stellt Betrieb ein - Kunden reagieren enttäuscht",
-            "description": "Ein fränkisches Unternehmen hat seinen Betrieb eingestellt, was bei den Kunden auf große Enttäuschung stößt.",
+            "title": "Politisch aufgeladener Samstag: Merz und Söder in Nürnberg - zahlreiche Proteste angemeldet",
+            "description": "An diesem Samstag treffen sich Merz und Söder in Nürnberg, während zahlreiche Proteste gegen ihre Veranstaltung angemeldet sind.",
+            "category": "german politics",
+            "english_translation": "Politically charged Saturday: Merz and Söder in Nuremberg - numerous protests registered"
+        },
+        {
+            "title": "Bin grad echt geschockt: Fränkisches Unternehmen stellt Betrieb ein - Kunden reagieren enttäuscht",
+            "description": "Ein fränkisches Unternehmen kündigt die Schließung seines Betriebs an, was bei den Kunden für Enttäuschung sorgt.",
             "category": "business",
-            "english_translation": "Franconian company shuts down operations - customers react disappointed"
+            "english_translation": "I'm really shocked: Franconian company shuts down - customers react disappointed"
         },
         {
             "title": "Betroffene verzweifeln an Nürnbergs Ausländerbehörde - Initiativen kritisieren Stadtverwaltung",
-            "description": "Betroffene Personen haben Schwierigkeiten mit der Ausländerbehörde in Nürnberg und Initiativen kritisieren die Stadtverwaltung wegen der unzureichenden Unterstützung.",
-            "category": "local politics",
-            "english_translation": "Affected individuals despair at Nuremberg's immigration office - initiatives criticize city administration"
+            "description": "Betroffene erleben Schwierigkeiten mit der Nürnberger Ausländerbehörde, während verschiedene Initiativen die Stadtverwaltung kritisieren.",
+            "category": "local news",
+            "english_translation": "Affected individuals despair over Nuremberg's immigration office - initiatives criticize city administration"
         },
         {
-            "title": "In Pralinenschachtel: Mann schmuggelt seine 'Rente' durch den Nürnberger Flughafen",
-            "description": "Ein Mann wurde beim Schmuggeln von Bargeld, versteckt in einer Pralinenschachtel, am Nürnberger Flughafen erwischt.",
+            "title": "Pralinenschachtel: Mann schmuggelt seine 'Rente' durch den Nürnberger Flughafen",
+            "description": "Ein Mann wurde beim Versuch erwischt, seine Rentenunterlagen und Ersparnisse durch den Nürnberger Flughafen zu schmuggeln, versteckt in einer Pralinenschachtel.",
             "category": "crime",
-            "english_translation": "In a box of chocolates: man smuggles his 'pension' through Nuremberg Airport"
+            "english_translation": "Pralines Box: Man smuggles his 'pension' through Nuremberg Airport"
         },
         {
             "title": "Über 15.000 Menschen in Nürnberg: Stadt und Polizei mit Statements vor XXL-Veranstaltung am Samstag",
-            "description": "Zur bevorstehenden Großveranstaltung am Samstag erwartet die Stadt über 15.000 Teilnehmer, Stadt und Polizei geben dazu Statements ab.",
-            "category": "event",
-            "english_translation": "Over 15,000 people in Nuremberg: city and police make statements ahead of XXL event on Saturday"
-        },
-        {
-            "title": "Sperrungen möglich: Demonstrationen in der Innenstadt am 8. Februar",
-            "description": "Am 8. Februar sind Demonstrationen in der Innenstadt geplant, es könnten Sperrungen notwendig werden.",
-            "category": "local politics",
-            "english_translation": "Possible closures: demonstrations planned in the city center on February 8"
-        },
-        {
-            "title": "Beschwerde nicht erfolgreich: Bahnstrecke Nürnberg-Regensburg wird 2026 zeitweise gesperrt",
-            "description": "Eine Beschwerde wurde abgelehnt; die Bahnstrecke zwischen Nürnberg und Regensburg wird 2026 zeitweise gesperrt.",
-            "category": "transportation",
-            "english_translation": "Complaint unsuccessful: Nuremberg-Regensburg railway line to be partially closed in 2026"
+            "description": "Vor einer großen Veranstaltung in Nürnberg äußerten sich Stadtverwaltung und Polizei zur Sicherheit und zum erwarteten Besucherandrang.",
+            "category": "local news",
+            "english_translation": "Over 15,000 people in Nuremberg: City and police issue statements ahead of XXL event on Saturday"
         },
         {
             "title": "Polizisten bei Auseinandersetzungen in Bayern verletzt",
-            "description": "Bei gewaltsamen Auseinandersetzungen in Bayern wurden mehrere Polizisten verletzt.",
+            "description": "Bei verschiedenen Auseinandersetzungen in Bayern wurden mehrere Polizisten verletzt, während sie versuchten, die öffentliche Ordnung aufrechtzuerhalten.",
             "category": "crime",
-            "english_translation": "Police officers injured in clashes in Bavaria"
+            "english_translation": "Police officers injured in confrontations in Bavaria"
         },
         {
             "title": "Söder lehnt Leihstimmen für FDP und Freie Wähler strikt ab",
-            "description": "Bayerns Ministerpräsident Söder hat entschieden gegen Leihstimmen für die FDP und die Freien Wähler Stellung bezogen.",
+            "description": "Der bayerische Ministerpräsident Markus Söder hat sich gegen die Idee von Leihstimmen für die FDP und die Freien Wähler ausgesprochen.",
             "category": "german politics",
-            "english_translation": "Söder firmly rejects tactical votes for FDP and Free Voters"
+            "english_translation": "Söder strictly rejects lending votes for FDP and Free Voters"
+        },
+        {
+            "title": "Sonnige Aussichten für das Wochenende in Bayern",
+            "description": "Das Wetter für das kommende Wochenende in Bayern verspricht sonnige Temperaturen und angenehmes Klima.",
+            "category": "local weather",
+            "english_translation": "Sunny outlook for the weekend in Bavaria"
         },
         {
             "title": "Transfer-Ticker: Das nächste Top-Talent aus der eigenen Jugend? FCN bindet Offensivjuwel langfristig",
-            "description": "Der 1. FC Nürnberg sichert sich langfristig einen vielversprechenden talentierten Spieler aus der eigenen Jugend.",
-            "category": "sport",
-            "english_translation": "Transfer ticker: Next top talent from the youth academy? FCN secures promising offensive jewel long-term"
+            "description": "Der 1. FC Nürnberg hat einen langfristigen Vertrag mit einem vielversprechenden Talente aus ihrer eigenen Jugendakademie unterschrieben.",
+            "category": "sports",
+            "english_translation": "Transfer ticker: The next top talent from their own youth? FCN secures offensive jewel long-term"
         },
         {
             "title": "Sammer pausiert beim BVB-Spiel als TV-Experte",
-            "description": "Matthias Sammer wird während des BVB-Spiels als TV-Experte pausieren.",
-            "category": "sport",
-            "english_translation": "Sammer takes a break during BVB match as TV expert"
+            "description": "Der frühere Fußballspieler Matthias Sammer hat sich entschieden, bei einem kommenden BVB-Spiel als TV-Experte eine Pause einzulegen.",
+            "category": "sports",
+            "english_translation": "Sammer takes a break from BVB game as TV expert"
         },
         {
             "title": "Weltmeisterin Laura Nolte holt EM-Titel im Monobob",
-            "description": "Die Weltmeisterin Laura Nolte gewinnt den Europameisterschaftstitel im Monobob.",
-            "category": "sport",
-            "english_translation": "World champion Laura Nolte wins European Championship title in monobob."
+            "description": "Laura Nolte, die Weltmeisterin im Monobob, hat erfolgreich den Europameistertitel in dieser Disziplin gewonnen.",
+            "category": "sports",
+            "english_translation": "World champion Laura Nolte claims EM title in Monobob"
         },
         {
             "title": "Kärwa-Saison 2025 in: Das sind die Termine der Nürnberger Stadtteil-Kärwas",
-            "description": "Die Termine für die Kärwa-Saison 2025 in Nürnberg wurden bekannt gegeben.",
+            "description": "Die Termine für die Kärwa-Saison 2025 in Nürnberg werden bekanntgegeben, einschließlich der Stadtteile, die teilnehmen werden.",
             "category": "local events",
-            "english_translation": "Kärwa season 2025: The dates for the district Kärwas in Nuremberg have been announced."
+            "english_translation": "Kärwa season 2025: These are the dates for the Nuremberg district Kärwas"
         },
         {
             "title": "Romantischer Gaumenschmaus zum Valentinstag: Diese Restaurants bieten leckere Menüs an",
-            "description": "Zahlreiche Restaurants präsentieren besondere Menüs zum Valentinstag.",
-            "category": "food",
-            "english_translation": "Romantic culinary delights for Valentine's Day: These restaurants offer delicious menus."
+            "description": "Zum Valentinstag präsentieren verschiedene Restaurants in der Region spezielle Menüs für Paare und romantische Abendessen.",
+            "category": "food & dining",
+            "english_translation": "Romantic culinary delights for Valentine's Day: These restaurants offer delicious menus"
         },
         {
             "title": "Megastar feiert Deutschland-Premiere: Latin Airport Nürnberg gibt ersten Headliner für 2025 bekannt",
-            "description": "Der Latin Airport Nürnberg kündigt seinen ersten Headliner für das Event 2025 an.",
+            "description": "Die Latin Airport Nürnberg hat ihren ersten Headliner für das Jahr 2025 bekannt gegeben. Der Megastar wird im kommenden Jahr in Deutschland auftreten.",
             "category": "entertainment",
-            "english_translation": "Megastar celebrates Germany premiere: Latin Airport Nuremberg announces first headliner for 2025."
+            "english_translation": "Megastar celebrates Germany premiere: Latin Airport Nuremberg announces first headliner for 2025"
         },
         {
             "title": "Wetter am Wochenende in weiten Teilen freundlich",
-            "description": "Das Wetter wird am Wochenende in vielen Regionen freundlich sein.",
+            "description": "Das Wetter am kommenden Wochenende wird in großen Teilen Deutschlands freundlich und angenehm sein.",
             "category": "weather",
-            "english_translation": "Weather this weekend to be friendly in many areas."
+            "english_translation": "Weather over the weekend mostly pleasant across large parts of Germany"
         },
         {
             "title": "Vom Schreibtisch in die Hosentasche: 20 Jahre Google Maps",
-            "description": "Google Maps feiert sein 20-jähriges Bestehen und seine Entwicklung über die Jahre.",
+            "description": "Google Maps feiert sein 20-jähriges Bestehen und hat sich von einem Schreibtisch-Tool zu einer mobilen Anwendung entwickelt.",
             "category": "technology",
-            "english_translation": "From the desk to your pocket: 20 years of Google Maps."
+            "english_translation": "From desk to pocket: 20 years of Google Maps"
         },
         {
             "title": "Insa-Umfrage: Union, AfD und SPD verlieren leicht",
-            "description": "Eine aktuelle Insa-Umfrage zeigt einen leichten Rückgang der Stimmen für Union, AfD und SPD.",
+            "description": "Laut einer aktuellen Insa-Umfrage verlieren die Union, die AfD und die SPD leicht an Zustimmung.",
             "category": "german politics",
-            "english_translation": "Insa survey: Union, AfD and SPD slightly lose support."
+            "english_translation": "Insa survey: Union, AfD, and SPD lose slight support"
         },
         {
             "title": "Baltische Staaten lösen sich aus russischem Stromnetz",
-            "description": "Die baltischen Staaten planen, sich vom russischen Stromnetz abzukoppeln.",
+            "description": "Die baltischen Staaten haben beschlossen, sich aus dem russischen Stromnetz zu lösen, um ihre Energieunabhängigkeit zu stärken.",
             "category": "international politics",
-            "english_translation": "Baltic states are disconnecting from the Russian electricity grid."
-        },
-        {
-            "title": "Elfmeter-„Alien“ Kane gibt Bayern Energieschub",
-            "description": "Der Spieler Harry Kane wird Bayern München mit seinen Fähigkeiten im Elfmeterschießen stärken.",
-            "category": "sport",
-            "english_translation": "Penalty 'alien' Kane boosts Bayern's energy."
+            "english_translation": "Baltic states are disconnecting from the Russian power grid"
         },
         {
             "title": "Preis der Switch 2: Teurer als gedacht? So viel soll die neue Nintendo-Konsole kosten",
-            "description": "Neue Informationen deuten darauf hin, dass die Nintendo Switch 2 teurer wird als erwartet.",
+            "description": "Es gibt erste Berichte über den Preis der neuen Nintendo Switch 2, der höher sein könnte als ursprünglich erwartet.",
             "category": "technology",
-            "english_translation": "Price of Switch 2: More expensive than expected? Here's how much the new Nintendo console is said to cost."
-        },
-        {
-            "title": "Gehirnwäsche-Vorwurf im Dschungelcamp",
-            "description": "Im Dschungelcamp gibt es Berichte über mögliche Gehirnwäsche unter den Teilnehmern, die die Diskussionen um mentale Gesundheit und das Wohlbefinden in Reality-TV-Formaten befeuern.",
-            "category": "tabloid",
-            "english_translation": "Accusation of brainwashing in the jungle camp"
+            "english_translation": "Switch 2 price: More expensive than thought? Here's how much the new Nintendo console is expected to cost"
         },
         {
             "title": "Prinzessin Sofia von Schweden bringt Tochter zur Welt",
-            "description": "Prinzessin Sofia und Prinz Carl Philip von Schweden haben die Geburt ihrer Tochter bekannt gegeben, was in den schwedischen Medien große Freude ausgelöst hat.",
-            "category": "international",
+            "description": "Die schwedische Prinzessin Sofia hat ein Mädchen zur Welt gebracht und die Nachricht wurde von der königlichen Familie bekanntgegeben.",
+            "category": "entertainment",
             "english_translation": "Princess Sofia of Sweden gives birth to daughter"
         }
     ]

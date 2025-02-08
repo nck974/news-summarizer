@@ -26,6 +26,8 @@ This small tool reads the content of a set of news papers, and organizes it to t
     1. Contact in telegram `@userinfobot`.
     2. Add your chat id to the `.env` in `TELEGRAM_USER_CHAT_ID`. (Many chat ids can be provided separated by a `,`)
 
+5. Add the categories you want to filter to the `.env` in the property `FILTER_CATEGORIES`, separated by a `,`. You may want to extend this after you see what comes from the AI.
+
 ## Usage
 
 1. Run `python main.py`
@@ -35,7 +37,7 @@ This small tool reads the content of a set of news papers, and organizes it to t
 - [ X ] Extract plain text news from a page.
 - [ X ] Extract structured news from the text content with AI.
 - [ X ] Classify the structured news into relevant topics.
-- [ ] Filter the topics that are not interesting.
+- [ X ] Filter the categories that are not interesting.
 - [ X ] Send the news via telegram bot.
 - [ ] Pack the content in docker.
 - [ ] Store in a database the news.

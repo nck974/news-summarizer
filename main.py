@@ -75,6 +75,7 @@ def classify_news(model: AIModelProtocol, text: list[str] | str) -> list[Article
 
     news_ai = NewsAI(model, batch_size=BATCH_SIZE, mock_response=MOCK_AI_RESPONSE)
     news_ai.classify_news(text)
+    news_ai.filter_news()
 
     logger.debug(f"A total of {len(news_ai.news)} were found.")
     logger.info("AI analysis finished.")

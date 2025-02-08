@@ -74,4 +74,29 @@ class NewsAI:
 
             self.news = self.news + News.model_validate_json(response.content).news
 
+        for article in self.news:
+            article.category = article.category.lower()
+
         logger.debug(f"A total of {self.model.used_tokens} tokens were used")
+
+    def _get_filtered_categories(self) -> list[str] | None:
+        """
+        Return the api key from the environment variable
+        """
+        filtered_categories = os.environ.get("FILTER_CATEGORIES")
+        if filtered_categories is None:
+            return None
+        return [x.strip().lower() for x in filtered_categories.split(",")]
+
+    def filter_news(self):
+        """
+        This filters the news if a filter exists
+        """
+        filtered_categories = self._get_filtered_categories()
+
+        if filtered_categories is None:
+            return None
+
+        self.news = [
+            x for x in self.news if x.category.lower() not in filtered_categories
+        ]
