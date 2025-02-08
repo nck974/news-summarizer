@@ -22,8 +22,12 @@ from src.telegram.bot import TelegramBot
 
 HEADED = True
 BATCH_SIZE = 10
-MOCK_AI_RESPONSE = False
-MOCK_EXTRACT_NEWS = False
+# Return a mocked object of the AI instead of wasting credit
+MOCK_AI_RESPONSE = True
+# Skip the data extraction from the frontend
+MOCK_EXTRACT_NEWS = True
+# Just print in the console the messages that will be broadcasted
+DRY_RUN_BROADCAST_MESSAGES = True
 NEWSPAPERS = [
     NewspaperConfig(
         name="Nord Bayern",
@@ -110,7 +114,7 @@ def broadcast_news(bot: TelegramBot, newspaper_name: str, news: list[Article]) -
         f"""**News from {newspaper_name} ({datetime.now().strftime(r"%Y-%m-%d")}):**"""
     )
     for category in sorted(categories):
-        category_message = f"""### {category}\n\n"""
+        category_message = f"""### {category.capitalize()}\n\n"""
         for index, article in enumerate(
             sorted(
                 filter(lambda x: x.category == category, news), key=lambda x: x.title
@@ -118,9 +122,9 @@ def broadcast_news(bot: TelegramBot, newspaper_name: str, news: list[Article]) -
             start=1,
         ):
             category_message += (
-                f"{index}. *{article.title}*\n"
-                f"- *Description:* {article.description}\n"
-                f"- *English Translation:* {article.english_translation}\n\n"
+                f"{index}. *{article.english_translation}*\n"
+                f"- *Original title:* {article.title}\n"
+                f"- *Description:* {article.description}\n\n"
             )
 
         bot.broadcast_message(category_message)
@@ -134,7 +138,7 @@ def main():
     newspaper_gatherer = NewspaperContentGatherer(
         headed=HEADED, mock_extract_news=MOCK_EXTRACT_NEWS
     )
-    bot = TelegramBot()
+    bot = TelegramBot(dry_run=DRY_RUN_BROADCAST_MESSAGES)
 
     for newspaper in NEWSPAPERS:
 
