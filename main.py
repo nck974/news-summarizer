@@ -19,6 +19,7 @@ from dotenv import load_dotenv
 
 HEADED = True
 BATCH_SIZE = 10
+MOCK_AI_RESPONSE = True
 NEWSPAPERS = [
     NewspaperConfig(
         name="Nord Bayern",
@@ -64,7 +65,7 @@ def classify_news(model: AIModelProtocol, text: list[str] | str) -> list[Article
     """
     logger.info("Starting AI analysis on the extracted text...")
 
-    news_ai = NewsAI(model)
+    news_ai = NewsAI(model, batch_size=BATCH_SIZE, mock_response=MOCK_AI_RESPONSE)
     news_ai.classify_news(text)
 
     logger.debug(f"A total of {len(news_ai.news)} were found.")

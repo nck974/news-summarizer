@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from model.article import Article
+from src.model.article import Article
 
 
 class News(BaseModel):

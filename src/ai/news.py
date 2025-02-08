@@ -1,3 +1,4 @@
+import os
 from loguru import logger
 
 from src.model.article import Article
@@ -13,14 +14,27 @@ class NewsAI:
     model: AIModelProtocol
     news: list[Article]
     batch_size: int
+    mock_response: bool
 
-    def __init__(self, model: AIModelProtocol, batch_size=10) -> None:
+    def __init__(
+        self, model: AIModelProtocol, batch_size=10, mock_response=False
+    ) -> None:
         """
         Initialize the library with the provided model
         """
         self.model = model
         self.news = []
         self.batch_size = batch_size
+        self.mock_response = mock_response
+
+    def _mock_news_response(self) -> None:
+        """
+        In order to save money during development use an old response to return a mock of the obtained data
+        """
+        with open(
+            os.path.join("src", "ai", "mock", "example.json"), mode="r", encoding="utf8"
+        ) as f:
+            self.news = News.model_validate_json(f.read()).news
 
     def classify_news(self, content: str | list[str]) -> None:
         """
@@ -35,6 +49,10 @@ class NewsAI:
         - Make sure you do not miss any translation
         - Format the output as a JSON list of News objects.
         """
+        if self.mock_response is True:
+            self._mock_news_response()
+            return
+
         if isinstance(content, str):
             content = [content]
 
