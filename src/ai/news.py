@@ -74,4 +74,4 @@ class NewsAI:
 
             self.news = self.news + News.model_validate_json(response.content).news
 
-        logger.debug(f"A total of {self.model.used_tokens} tokens where used")
+        logger.debug(f"A total of {self.model.used_tokens} tokens were used")

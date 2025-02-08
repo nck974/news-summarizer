@@ -22,7 +22,7 @@ def extract_nord_bayern_headlines(page: Page) -> list[str] | None:
     Close the cookies of the page to be able to read the content
     """
     elements = page.query_selector_all(
-        "xpath=//*[(self::h5 or self::h6 or self::h2) and contains(@class, 'headline')]"
+        "xpath=//*[(self::h6 or self::h2) and contains(@class, 'headline')] | //h5[contains(@class,'headline') and not(following-sibling::p[text()='anzeige'] or preceding-sibling::p[contains(text(),'Anzeige')])]"
     )
 
     if elements is None:
