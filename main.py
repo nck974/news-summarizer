@@ -7,13 +7,8 @@ import os
 from dotenv import load_dotenv
 from loguru import logger
 
-from src.service.article_service import ArticleService
-from src.service.broadcast_service import BroadcastService
-from src.service.category_service import CategoryService
-from src.service.newspaper_service import NewspaperService
 from src.ai.models.model import AIModelProtocol
 from src.ai.models.openai import OpenAIModel
-from src.ai.news import NewsAI
 from src.db.database import Database
 from src.model.news import Article
 from src.model.newspaper import Newspaper
@@ -21,10 +16,15 @@ from src.playwright.custom.nord_bayern import (
     accept_nord_bayern_cookies,
     extract_nord_bayern_headlines,
 )
-from src.playwright.newspaper import NewspaperContentGatherer
+from src.service.ai_service import AiService
+from src.service.article_service import ArticleService
+from src.service.broadcast_service import BroadcastService
+from src.service.category_service import CategoryService
+from src.service.newspaper_service import NewspaperService
+from src.service.scraper_service import ScraperService
 from src.telegram.bot import TelegramBot
 
-HEADED = True
+HEADED_BROWSER = True
 BATCH_SIZE = 10
 # Skip the data extraction from the frontend
 MOCK_EXTRACT_NEWS = False
@@ -44,31 +44,28 @@ NEWSPAPERS = [
 ]
 
 
-def extract_news(
-    newspaper_gatherer: NewspaperContentGatherer, newspaper: Newspaper
-) -> list[str] | None:
+def extract_news(newspaper: Newspaper) -> list[str] | None:
     """
     Extract the news from the newspaper website
     """
-
+    scraper_service = ScraperService(headed=HEADED_BROWSER, mock_extract_news=MOCK_EXTRACT_NEWS)
     logger.info(f"Extracting data from: {newspaper.name}")
 
-    newspaper_gatherer.access_page(newspaper.url)
+    scraper_service.access_page(newspaper.url)
 
     if newspaper.access_hook is not None:
-        newspaper_gatherer.execute_custom_function(newspaper.access_hook)
+        scraper_service.execute_custom_function(newspaper.access_hook)
 
-    if newspaper.extract_data_hook is None:
-        text = newspaper_gatherer.extract_root_text_content()
-    else:
-        text = newspaper_gatherer.execute_custom_function_returning_value(
-            newspaper.extract_data_hook
-        )
+    text = scraper_service.execute_custom_function_returning_value(
+        newspaper.extract_data_hook
+    )
+
+    scraper_service.close()
 
     if text is None or text == "" or (isinstance(text, list) and len(text) == 0):
         return None
 
-    logger.debug(f"Mews found in {newspaper.url}:\n{text}")
+    logger.debug(f"News found in {newspaper.url}:\n{text}")
 
     return text
 
@@ -79,9 +76,9 @@ def classify_news(model: AIModelProtocol, text: list[str] | str) -> list[Article
     """
     logger.info("Starting AI analysis on the extracted text...")
 
-    news_ai = NewsAI(model, batch_size=BATCH_SIZE, mock_response=MOCK_AI_RESPONSE)
+    news_ai = AiService(model, batch_size=BATCH_SIZE, mock_response=MOCK_AI_RESPONSE)
     news_ai.classify_news(text)
-    news_ai.filter_news()
+    news_ai.filter_news_by_category()
 
     logger.debug(f"A total of {len(news_ai.news)} were found.")
     logger.info("AI analysis finished.")
@@ -89,9 +86,7 @@ def classify_news(model: AIModelProtocol, text: list[str] | str) -> list[Article
     return news_ai.news
 
 
-def save_data_in_db(
-    db: Database, newspaper: Newspaper, news: list[Article]
-) -> None:
+def save_data_in_db(db: Database, newspaper: Newspaper, news: list[Article]) -> None:
     """
     Save the data in the database so that further request can filter the news that have
     already been processed by the AI
@@ -132,16 +127,14 @@ def main():
     Execute main functionality of this project
     """
     model = OpenAIModel(api_key=os.environ.get("OPENAI_API_KEY", ""))
-    newspaper_gatherer = NewspaperContentGatherer(
-        headed=HEADED, mock_extract_news=MOCK_EXTRACT_NEWS
-    )
+
     bot = TelegramBot(dry_run=DRY_RUN_BROADCAST_MESSAGES)
     broadcast_service = BroadcastService(bot)
     db = Database(DATABASE_NAME)
 
     for newspaper in NEWSPAPERS:
 
-        raw_news = extract_news(newspaper_gatherer, newspaper)
+        raw_news = extract_news(newspaper)
 
         if raw_news is None:
             continue
@@ -157,7 +150,6 @@ def main():
         save_data_in_db(db, newspaper, news)
         broadcast_service.broadcast_news(newspaper.name, news)
 
-    newspaper_gatherer.close()
     print("Finished")
 
 

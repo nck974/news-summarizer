@@ -11,4 +11,4 @@ class Newspaper(BaseModel):
     name: str
     url: str
     access_hook: Optional[Callable] = Field(default=None)
-    extract_data_hook: Optional[Callable] = Field(default=None)
+    extract_data_hook: Callable

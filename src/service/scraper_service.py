@@ -2,7 +2,7 @@ from typing import Any, Callable
 from playwright.sync_api import sync_playwright, Playwright, Browser, Page
 
 
-class NewspaperContentGatherer:
+class ScraperService:
     """
     Class to interact with the frontend
     """
@@ -29,21 +29,6 @@ class NewspaperContentGatherer:
             return
 
         self.page.goto(url)
-
-    def save_screenshot(self) -> None:
-        """
-        Access the provided site
-        """
-        self.page.screenshot(path="test.png", type="png")
-
-    def extract_root_text_content(self) -> list[str]:
-        """
-        Return the whole text of the page
-        """
-        if self.mock_extract_news:
-            return ["SOME_TEXT"]
-
-        return [self.page.inner_text("//*")]
 
     def execute_custom_function(self, function: Callable) -> None:
         """

@@ -1,6 +1,8 @@
 from datetime import datetime
+
 from loguru import logger
-from model.article import Article
+
+from src.model.article import Article
 from src.telegram.bot import TelegramBot
 
 

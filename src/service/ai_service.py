@@ -6,7 +6,7 @@ from src.model.news import ExtractedNews
 from src.ai.models.model import AIModelProtocol
 
 
-class NewsAI:
+class AiService:
     """
     Obtain structured data from some news
     """
@@ -88,7 +88,7 @@ class NewsAI:
             return None
         return [x.strip().lower() for x in filtered_categories.split(",")]
 
-    def filter_news(self):
+    def filter_news_by_category(self):
         """
         This filters the news if a filter exists
         """
