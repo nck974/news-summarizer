@@ -40,5 +40,5 @@ This small tool reads the content of a set of news papers, and organizes it to t
 - [ X ] Filter the categories that are not interesting.
 - [ X ] Send the news via telegram bot.
 - [ ] Pack the content in docker.
-- [ ] Store in a database the news.
+- [ X ] Store in a database the news.
 - [ ] Store statistics per day of the different news types.

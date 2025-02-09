@@ -3,23 +3,20 @@ Main module to execute this project
 """
 
 import os
-from datetime import datetime
 
 from dotenv import load_dotenv
 from loguru import logger
 
-from src.db.model.category import Category
-from src.db.model.news import News
-from src.db.repository.category_repository import CategoryRepository
-from src.db.repository.news_repository import NewsRepository
-from src.db.database import Database
-from src.db.model.newspaper import Newspaper
-from src.db.repository.newspaper_repository import NewspaperRepository
+from src.service.article_service import ArticleService
+from src.service.broadcast_service import BroadcastService
+from src.service.category_service import CategoryService
+from src.service.newspaper_service import NewspaperService
 from src.ai.models.model import AIModelProtocol
 from src.ai.models.openai import OpenAIModel
 from src.ai.news import NewsAI
-from src.model.news import Article, ExtractedNews
-from src.model.newspaper_config import NewspaperConfig
+from src.db.database import Database
+from src.model.news import Article
+from src.model.newspaper import Newspaper
 from src.playwright.custom.nord_bayern import (
     accept_nord_bayern_cookies,
     extract_nord_bayern_headlines,
@@ -38,7 +35,7 @@ DRY_RUN_BROADCAST_MESSAGES = True
 # Name of the sqlite file where the database will be saved
 DATABASE_NAME = "news.db"
 NEWSPAPERS = [
-    NewspaperConfig(
+    Newspaper(
         name="Nord Bayern",
         url="https://www.nordbayern.de/",
         access_hook=accept_nord_bayern_cookies,
@@ -48,7 +45,7 @@ NEWSPAPERS = [
 
 
 def extract_news(
-    newspaper_gatherer: NewspaperContentGatherer, newspaper: NewspaperConfig
+    newspaper_gatherer: NewspaperContentGatherer, newspaper: Newspaper
 ) -> list[str] | None:
     """
     Extract the news from the newspaper website
@@ -92,148 +89,42 @@ def classify_news(model: AIModelProtocol, text: list[str] | str) -> list[Article
     return news_ai.news
 
 
-def save_data(db: Database, newspaper: NewspaperConfig, news: list[Article]) -> None:
+def save_data_in_db(
+    db: Database, newspaper: Newspaper, news: list[Article]
+) -> None:
     """
-    Save the data for later usage
+    Save the data in the database so that further request can filter the news that have
+    already been processed by the AI
     """
 
-    newspaper_id = save_newspaper_in_db(db, newspaper)
+    newspaper_service = NewspaperService(db)
+    newspaper_id = newspaper_service.save_newspaper(newspaper)
 
     categories = set([x.category.lower() for x in news])
 
+    category_service = CategoryService(db)
+    article_service = ArticleService(db)
     for category in sorted(categories):
-        category_id = save_category_in_db(db, category)
+        category_id = category_service.save_category(category)
         for article in sorted(
             filter(lambda x: x.category == category, news), key=lambda x: x.title
         ):
-            save_article_in_db(db, article, category_id, newspaper_id)
-
-    with open("example.json", mode="w", encoding="utf8") as f:
-        f.write(ExtractedNews(news=news).model_dump_json(indent=4))
+            article_service.save_article(article, category_id, newspaper_id)
 
 
 def filter_existing_news(db: Database, news: list[str]) -> list[str]:
     """
-    Save the data for later usage
+    Filter the news that are already stored in the database
     """
+    article_service = ArticleService(db)
 
     articles: list[str] = []
     for article in news:
-        if exists_article_in_db(db, article):
+        if article_service.exists_article(article):
             continue
         articles.append(article)
 
     return articles
-
-
-def display_news(news: list[Article]) -> None:
-    """
-    Displayed the articles that were provided
-    """
-    for index, article in enumerate(news):
-        print(
-            f"{index} ({article.category}): {article.title}\n\t`--> {article.description}\n\t`--> {article.english_translation}"
-        )
-
-
-def broadcast_news(bot: TelegramBot, newspaper_name: str, news: list[Article]) -> None:
-    """
-    Displayed the articles that were provided
-    """
-    logger.info(f"Sending broadcast message with the news of {newspaper_name}...")
-
-    categories = set([x.category for x in news])
-
-    logger.debug(f"The following categories were found: {categories}")
-
-    bot.broadcast_message(
-        f"""**News from {newspaper_name} ({datetime.now().strftime(r"%Y-%m-%d")}):**"""
-    )
-    for category in sorted(categories):
-        category_message = f"""### {category.capitalize()}\n\n"""
-        for index, article in enumerate(
-            sorted(
-                filter(lambda x: x.category == category, news), key=lambda x: x.title
-            ),
-            start=1,
-        ):
-            category_message += (
-                f"{index}. *{article.english_translation}*\n"
-                f"- *Original title:* {article.title}\n"
-                f"- *Description:* {article.description}\n\n"
-            )
-
-        bot.broadcast_message(category_message)
-
-
-def save_newspaper_in_db(db: Database, newspaper_config: NewspaperConfig) -> int:
-    """
-    Save the newspaper in the database if it does not already exist
-    """
-    logger.debug(f"Saving newspaper '{newspaper_config.name}' in the database...")
-    newspaper_repo = NewspaperRepository(db)
-    newspaper = newspaper_repo.get_by_name(newspaper_config.name)
-    if newspaper is None:
-        newspaper = newspaper_repo.create(
-            Newspaper(name=newspaper_config.name, url=newspaper_config.url)
-        )
-
-    if newspaper.id is None:
-        raise RuntimeError("The newspaper could not be saved")
-
-    return newspaper.id
-
-
-def exists_article_in_db(db: Database, article_title: str) -> bool:
-    """
-    Find the article in the database
-    """
-    news_repo = NewsRepository(db)
-    news = news_repo.get_by_name(article_title)
-    if news is None:
-        return False
-
-    return True
-
-
-def save_category_in_db(db: Database, category_name: str) -> int:
-    """
-    Save the category in the database if it does not already exist
-    """
-    logger.debug(f"Saving category '{category_name}' in the database...")
-    category_repo = CategoryRepository(db)
-    category = category_repo.get_by_name(category_name)
-    if category is None:
-        category = category_repo.create(Category(name=category_name))
-
-    if category.id is None:
-        raise RuntimeError("The category could not be saved")
-
-    return category.id
-
-
-def save_article_in_db(
-    db: Database, article: Article, category_id: int, newspaper_id: int
-) -> int:
-    """
-    Save the category in the database if it does not already exist
-    """
-    logger.debug(f"Saving article '{article.title}' in the database...")
-    news_repo = NewsRepository(db)
-    news = news_repo.create(
-        News(
-            newspaper_id=newspaper_id,
-            category_id=category_id,
-            article=article.title,
-            description=article.description,
-            translation=article.english_translation
-        )
-    )
-
-    if news.id is None:
-        raise RuntimeError("The article could not be saved")
-
-    return news.id
 
 
 def main():
@@ -245,6 +136,7 @@ def main():
         headed=HEADED, mock_extract_news=MOCK_EXTRACT_NEWS
     )
     bot = TelegramBot(dry_run=DRY_RUN_BROADCAST_MESSAGES)
+    broadcast_service = BroadcastService(bot)
     db = Database(DATABASE_NAME)
 
     for newspaper in NEWSPAPERS:
@@ -262,9 +154,8 @@ def main():
             logger.info("No news found on the ai analysis")
             continue
 
-        save_data(db, newspaper, news)
-        # display_news(news)
-        broadcast_news(bot, newspaper.name, news)
+        save_data_in_db(db, newspaper, news)
+        broadcast_service.broadcast_news(newspaper.name, news)
 
     newspaper_gatherer.close()
     print("Finished")

@@ -3,7 +3,7 @@ from typing import Callable, Optional
 from pydantic import Field, BaseModel
 
 
-class NewspaperConfig(BaseModel):
+class Newspaper(BaseModel):
     """
     Model to represent the configuration of a single newspaper page
     """
