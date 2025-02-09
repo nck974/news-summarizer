@@ -1,7 +1,7 @@
 from typing import List, Optional
 
 from ..database import Database
-from ..model.newspaper import Newspaper
+from ..entity.newspaper import Newspaper
 from .base_repository import BaseRepository
 
 

@@ -2,11 +2,12 @@
 Module to use the api of OpenAI
 """
 
-from loguru import logger
-from openai import OpenAI
 from typing import Any, Iterable, Optional
 
-from src.ai.models.model import AIModelProtocol, ModelResponse
+from loguru import logger
+from openai import OpenAI
+
+from src.ai.provider.base import AIModelProtocol, ModelResponse
 
 
 class OpenAIModel(AIModelProtocol):

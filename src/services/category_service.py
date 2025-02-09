@@ -1,7 +1,7 @@
 from loguru import logger
 
 from src.db.database import Database
-from src.db.model.category import Category
+from src.db.entity.category import Category
 from src.db.repository.category_repository import CategoryRepository
 
 

@@ -1,6 +1,6 @@
 from loguru import logger
-from src.db.model.news import News
-from src.model.article import Article
+from src.db.entity.news import News
+from src.domain.article import Article
 from src.db.repository.news_repository import NewsRepository
 from src.db.database import Database
 

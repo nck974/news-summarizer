@@ -1,9 +1,9 @@
 import os
 from loguru import logger
 
-from src.model.article import Article
-from src.model.news import ExtractedNews
-from src.ai.models.model import AIModelProtocol
+from src.domain.article import Article
+from src.domain.news import ExtractedNews
+from src.ai.provider.base import AIModelProtocol
 
 
 class AiService:

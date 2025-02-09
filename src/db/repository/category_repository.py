@@ -1,7 +1,7 @@
 from typing import List, Optional
 
 from ..database import Database
-from ..model.category import Category
+from ..entity.category import Category
 from .base_repository import BaseRepository
 
 

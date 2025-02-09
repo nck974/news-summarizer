@@ -7,21 +7,21 @@ import os
 from dotenv import load_dotenv
 from loguru import logger
 
-from src.ai.models.model import AIModelProtocol
-from src.ai.models.openai import OpenAIModel
+from src.ai.provider.base import AIModelProtocol
+from src.ai.provider.openai import OpenAIModel
 from src.db.database import Database
-from src.model.news import Article
-from src.model.newspaper import Newspaper
-from src.playwright.custom.nord_bayern import (
+from src.domain.news import Article
+from src.domain.newspaper import Newspaper
+from src.scraper.custom.nord_bayern import (
     accept_nord_bayern_cookies,
     extract_nord_bayern_headlines,
 )
-from src.service.ai_service import AiService
-from src.service.article_service import ArticleService
-from src.service.broadcast_service import BroadcastService
-from src.service.category_service import CategoryService
-from src.service.newspaper_service import NewspaperService
-from src.service.scraper_service import ScraperService
+from src.services.ai_service import AiService
+from src.services.article_service import ArticleService
+from src.services.broadcast_service import BroadcastService
+from src.services.category_service import CategoryService
+from src.services.newspaper_service import NewspaperService
+from src.services.scraper_service import ScraperService
 from src.telegram.bot import TelegramBot
 
 HEADED_BROWSER = True
@@ -48,7 +48,9 @@ def extract_news(newspaper: Newspaper) -> list[str] | None:
     """
     Extract the news from the newspaper website
     """
-    scraper_service = ScraperService(headed=HEADED_BROWSER, mock_extract_news=MOCK_EXTRACT_NEWS)
+    scraper_service = ScraperService(
+        headed=HEADED_BROWSER, mock_extract_news=MOCK_EXTRACT_NEWS
+    )
     logger.info(f"Extracting data from: {newspaper.name}")
 
     scraper_service.access_page(newspaper.url)

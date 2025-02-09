@@ -1,7 +1,7 @@
 from loguru import logger
 
-from src.db.model.newspaper import Newspaper as NewspaperEntity
-from src.model.newspaper import Newspaper
+from src.db.entity.newspaper import Newspaper as NewspaperEntity
+from src.domain.newspaper import Newspaper
 from src.db.database import Database
 from src.db.repository.newspaper_repository import NewspaperRepository
 

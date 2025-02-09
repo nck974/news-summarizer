@@ -1,7 +1,7 @@
 from typing import Optional
 
 from ..database import Database
-from ..model.news import News
+from ..entity.news import News
 from .base_repository import BaseRepository
 
 
