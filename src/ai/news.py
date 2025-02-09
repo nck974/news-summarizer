@@ -2,7 +2,7 @@ import os
 from loguru import logger
 
 from src.model.article import Article
-from src.model.news import News
+from src.model.news import ExtractedNews
 from src.ai.models.model import AIModelProtocol
 
 
@@ -34,7 +34,7 @@ class NewsAI:
         with open(
             os.path.join("src", "ai", "mock", "example.json"), mode="r", encoding="utf8"
         ) as f:
-            self.news = News.model_validate_json(f.read()).news
+            self.news = ExtractedNews.model_validate_json(f.read()).news
 
     def classify_news(self, content: str | list[str]) -> None:
         """
@@ -62,7 +62,7 @@ class NewsAI:
             news_text = "\n".join(news_batch)
 
             response = self.model.generate(
-                news_text, system_prompt=system_prompt, response_format=News
+                news_text, system_prompt=system_prompt, response_format=ExtractedNews
             )
 
             logger.trace(response.content)
@@ -72,7 +72,7 @@ class NewsAI:
             logger.trace(type(response.metadata))
             logger.trace(type(response.raw_response))
 
-            self.news = self.news + News.model_validate_json(response.content).news
+            self.news = self.news + ExtractedNews.model_validate_json(response.content).news
 
         for article in self.news:
             article.category = article.category.lower()

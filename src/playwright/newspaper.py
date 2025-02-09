@@ -36,14 +36,14 @@ class NewspaperContentGatherer:
         """
         self.page.screenshot(path="test.png", type="png")
 
-    def extract_root_text_content(self) -> str:
+    def extract_root_text_content(self) -> list[str]:
         """
         Return the whole text of the page
         """
         if self.mock_extract_news:
-            return "SOME_TEXT"
+            return ["SOME_TEXT"]
 
-        return self.page.inner_text("//*")
+        return [self.page.inner_text("//*")]
 
     def execute_custom_function(self, function: Callable) -> None:
         """

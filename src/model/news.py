@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from src.model.article import Article
 
 
-class News(BaseModel):
+class ExtractedNews(BaseModel):
     """
     Representation of a news
     """
