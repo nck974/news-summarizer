@@ -16,6 +16,9 @@ from src.scraper.custom.nord_bayern import (
     accept_nord_bayern_cookies,
     extract_nord_bayern_headlines,
 )
+from src.scraper.custom.twenty_minutes import (
+    extract_20_minutes_headlines,
+)
 from src.services.ai_service import AiService
 from src.services.article_service import ArticleService
 from src.services.broadcast_service import BroadcastService
@@ -29,9 +32,9 @@ BATCH_SIZE = 10
 # Skip the data extraction from the frontend
 MOCK_EXTRACT_NEWS = False
 # Return a mocked object of the AI instead of wasting credit
-MOCK_AI_RESPONSE = True
+MOCK_AI_RESPONSE = False
 # Just print in the console the messages that will be broadcasted
-DRY_RUN_BROADCAST_MESSAGES = True
+DRY_RUN_BROADCAST_MESSAGES = False
 # Name of the sqlite file where the database will be saved
 DATABASE_NAME = "news.db"
 NEWSPAPERS = [
@@ -40,7 +43,13 @@ NEWSPAPERS = [
         url="https://www.nordbayern.de/",
         access_hook=accept_nord_bayern_cookies,
         extract_data_hook=extract_nord_bayern_headlines,
-    )
+    ),
+    Newspaper(
+        name="20 Minutos",
+        url="https://20minutos.es/",
+        access_hook=None,
+        extract_data_hook=extract_20_minutes_headlines,
+    ),
 ]
 
 

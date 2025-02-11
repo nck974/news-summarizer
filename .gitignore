@@ -3,6 +3,7 @@ poetry.lock
 *.pyc
 __pycache__
 .env
+/example-*.json
 /example.json
 .vscode
 news.db

@@ -1,4 +1,6 @@
 import os
+import time
+from typing import Optional
 from loguru import logger
 
 from src.domain.article import Article
@@ -36,9 +38,13 @@ class AiService:
         ) as f:
             self.news = ExtractedNews.model_validate_json(f.read()).news
 
-    def classify_news(self, content: str | list[str]) -> None:
+    def classify_news(
+        self, content: str | list[str], queries_per_minute: Optional[int] = 20
+    ) -> None:
         """
         This method will find the news in the provided content and save them inside this class
+
+        * rate_sec indicates how many requests can be done until 1 minute es waited
         """
         system_prompt = """\
         - You are in charge of organizing the news provided by the user.
@@ -56,6 +62,7 @@ class AiService:
         if isinstance(content, str):
             content = [content]
 
+        counter = 0
         for i in range(0, len(content), self.batch_size):
             news_batch = content[i : i + self.batch_size]
 
@@ -72,7 +79,12 @@ class AiService:
             logger.trace(type(response.metadata))
             logger.trace(type(response.raw_response))
 
-            self.news = self.news + ExtractedNews.model_validate_json(response.content).news
+            self.news = (
+                self.news + ExtractedNews.model_validate_json(response.content).news
+            )
+            counter += 1
+            if queries_per_minute is not None and counter % queries_per_minute == 0:
+                time.sleep(60)
 
         for article in self.news:
             article.category = article.category.lower()
