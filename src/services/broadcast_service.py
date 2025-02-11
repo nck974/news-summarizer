@@ -28,7 +28,7 @@ class BroadcastService:
             f"""**News from {newspaper_name} ({datetime.now().strftime(r"%Y-%m-%d")}):**"""
         )
         for category in sorted(categories):
-            category_message = f"""### {category.capitalize()}\n\n"""
+            self.telegram_bot.broadcast_message(f"""### {category.capitalize()}\n\n""")
             for index, article in enumerate(
                 sorted(
                     filter(lambda x: x.category == category, news),
@@ -36,10 +36,8 @@ class BroadcastService:
                 ),
                 start=1,
             ):
-                category_message += (
+                self.telegram_bot.broadcast_message(
                     f"{index}. *{article.english_translation}*\n"
                     f"- *Original title:* {article.title}\n"
-                    f"- *Description:* {article.description}\n\n"
+                    f"- *Description:* {article.description}"
                 )
-
-            self.telegram_bot.broadcast_message(category_message)
