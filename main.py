@@ -27,7 +27,7 @@ from src.services.newspaper_service import NewspaperService
 from src.services.scraper_service import ScraperService
 from src.telegram.bot import TelegramBot
 
-HEADED_BROWSER = True
+HEADED_BROWSER = False
 BATCH_SIZE = 10
 # Skip the data extraction from the frontend
 MOCK_EXTRACT_NEWS = False
@@ -36,7 +36,7 @@ MOCK_AI_RESPONSE = False
 # Just print in the console the messages that will be broadcasted
 DRY_RUN_BROADCAST_MESSAGES = False
 # Name of the sqlite file where the database will be saved
-DATABASE_NAME = "news.db"
+DATABASE_NAME = os.path.join("database", "news.db")
 NEWSPAPERS = [
     Newspaper(
         name="Nord Bayern",

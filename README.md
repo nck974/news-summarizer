@@ -1,8 +1,15 @@
 # News summarizer
 
-This small tool reads the content of a set of news papers, and organizes it to then send it summarized skipping the configured content.
+This small tool reads the content of a set of news papers, and classifies the news into categories. Then sends the news through Telegram.
+
+Implemented newspapers:
+
+☑ 20minutos.es
+☑ nordbayern.de
 
 ## Installation
+
+### Local
 
 1. Create a virtual environment and install the dependencies:
 
@@ -28,17 +35,23 @@ This small tool reads the content of a set of news papers, and organizes it to t
 
 5. Add the categories you want to filter to the `.env` in the property `FILTER_CATEGORIES`, separated by a `,`. You may want to extend this after you see what comes from the AI.
 
+### Docker
+
+1. Pull the project
+1. Build `docker compose build`.
+1. Configure the `.env` file.
+1. Start `docker compose up -d`.
+
 ## Usage
 
 1. Run `python main.py`
 
-## Roadmap
+## Configuration
 
-- [ X ] Extract plain text news from a page.
-- [ X ] Extract structured news from the text content with AI.
-- [ X ] Classify the structured news into relevant topics.
-- [ X ] Filter the categories that are not interesting.
-- [ X ] Send the news via telegram bot.
-- [ ] Pack the content in docker.
-- [ X ] Store in a database the news.
-- [ ] Store statistics per day of the different news types.
+| Property | Description | Type | Required |
+|----------|-------------|------|----------|
+| OPENAI_API_KEY | Authentication key for accessing the OpenAI API services. Obtain this from your OpenAI account dashboard. | String | Yes |
+| TELEGRAM_BOT_API_KEY | Authentication token for your Telegram bot. Get this from BotFather when creating a new bot. | String | Yes |
+| TELEGRAM_USER_CHAT_ID | Unique identifier for the Telegram chat where messages will be sent. Can be obtained by sending a message to your bot and checking the chat ID. | String | Yes |
+| FILTER_CATEGORIES | List of categories to filter content. Multiple categories should be comma-separated. | String | No |
+| CRON_PATTERN | Schedule pattern in cron format (e.g., "0 8 ** *"). Defines when the tasks will run. | String | Yes |

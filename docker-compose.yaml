@@ -1,0 +1,21 @@
+volumes:
+  database:
+
+services:
+  new-summarizer:
+    container_name: news-summarizer
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VERSION=${VERSION:-0.0.0}
+    volumes:
+      - database:/app/database
+    environment:
+      - TZ=Europe/Berlin
+      - CRON_PATTERN=${CRON_PATTERN:-0 8 * * *}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - TELEGRAM_BOT_API_KEY=${TELEGRAM_BOT_API_KEY}
+      - TELEGRAM_USER_CHAT_ID=${TELEGRAM_USER_CHAT_ID}
+      - FILTER_CATEGORIES=${FILTER_CATEGORIES}
+    restart: unless-stopped
