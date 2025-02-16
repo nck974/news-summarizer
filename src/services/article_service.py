@@ -1,3 +1,4 @@
+import os
 from loguru import logger
 from src.db.entity.news import News
 from src.domain.article import Article
@@ -42,3 +43,23 @@ class ArticleService:
             return False
 
         return True
+
+    def _get_max_number_of_news_per_newspaper(self) -> int:
+        """
+        Return the api key from the environment variable
+        """
+        articles_number = os.environ.get("MAX_NEWS_PER_NEWSPAPER")
+        if articles_number is None:
+            return 15
+        return int(articles_number)
+
+    def filter_article_limit(self, articles: list[str]) -> list[str]:
+        """
+        Limit the number of articles found to the configured number
+        """
+        number = self._get_max_number_of_news_per_newspaper()
+
+        if len(articles) > number:
+            return articles[:number]
+
+        return articles

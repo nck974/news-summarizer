@@ -130,6 +130,10 @@ def filter_existing_news(db: Database, news: list[str]) -> list[str]:
             continue
         articles.append(article)
 
+    articles = article_service.filter_article_limit(articles)
+
+    logger.debug(f"A total of {len(articles)} new articles were found")
+
     return articles
 
 
